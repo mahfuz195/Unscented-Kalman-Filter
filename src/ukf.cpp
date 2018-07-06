@@ -26,11 +26,11 @@ UKF::UKF() {
 
   // Process noise standard deviation longitudinal acceleration in m/s^2
   //std_a_ = 0.5;
-  std_a_ = 1.5;
+  std_a_ = 2;
 
   // Process noise standard deviation yaw acceleration in rad/s^2
   //std_yawdd_ = 0.6;
-  std_yawdd_ = 0.6;
+  std_yawdd_ = 0.3;
   
   //DO NOT MODIFY measurement noise values below these are provided by the sensor manufacturer.
   // Laser measurement noise standard deviation position1 in m
@@ -95,7 +95,7 @@ void UKF::ProcessMeasurement(MeasurementPackage measurement_pack) {
   measurements.
   */
 
-  cout << "@<UKF::Initialization>" << endl;
+  //cout << "@<UKF::Initialization>" << endl;
   
   /*************************************
    Initialization 
@@ -153,7 +153,7 @@ void UKF::Prediction(double delta_t) {
   Complete this function! Estimate the object's location. Modify the state
   vector, x_. Predict sigma points, the state, and the state covariance matrix.
   */
-  cout << "@UKF::Prediction" << endl;
+  //cout << "@UKF::Prediction" << endl;
 
    //create augmented mean vector
    VectorXd x_aug = VectorXd(7);
@@ -184,7 +184,7 @@ void UKF::Prediction(double delta_t) {
      Xsig_aug.col(i+1+n_aug_) = x_aug - sqrt(lambda_+n_aug_) * L.col(i);
    }
    
-   cout << "@UKF::Prediction -> Augmented signamed points!" << endl;
+   //cout << "@UKF::Prediction -> Augmented signamed points!" << endl;
 
    for (int i = 0; i< n_sig_; i++){
       //extract values from each collumn
@@ -256,7 +256,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   position. Modify the state vector, x_, and covariance, P_.
   You'll also need to calculate the lidar NIS.
   */
-  cout << "@UKF::UpdateLider" << endl;
+  //cout << "@UKF::UpdateLider" << endl;
   
 
   VectorXd z = VectorXd(2);
@@ -300,7 +300,7 @@ void UKF::UpdateRadar(MeasurementPackage meas_package) {
   position. Modify the state vector, x_, and covariance, P_.
   You'll also need to calculate the radar NIS.
   */
-  cout << "@UKF::UpdateRader" << endl;
+  //cout << "@UKF::UpdateRader" << endl;
   
 
   MatrixXd Zsig = MatrixXd(3, 2 * n_aug_ + 1);
