@@ -1,4 +1,4 @@
-# Unscented Kalman Filter Project Starter Code
+# Unscented Kalman Filter Project 3 Term 2
 Self-Driving Car Engineer Nanodegree Program
 
 In this project I have utilized a Unscented kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
@@ -13,11 +13,11 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 2. cd build
 3. cmake ..
 4. make
-5. ./ExtendedKF
+5. ./UnscentedKF
 
 ### Results
 
-After implementing the Unscented Extended Kalman Filter I got the following results on dataset 1 and 2: 
+After implementing the Unscented Extended Kalman Filter I got the following results on dataset 1: 
 
 ---
 
