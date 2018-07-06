@@ -1,4 +1,4 @@
-# Unscented Kalman Filter Project 3 Term 2
+# Unscented Kalman Filter Project 2 Term 2
 Self-Driving Car Engineer Nanodegree Program
 
 In this project I have utilized a Unscented kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
