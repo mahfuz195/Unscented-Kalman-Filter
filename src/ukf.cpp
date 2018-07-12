@@ -272,8 +272,8 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   MatrixXd Ht = H_.transpose();
   MatrixXd R_laser_=MatrixXd(2,2);
   
-  R_laser_<< std_laspx_,0,
-             0,std_laspy_;
+  R_laser_<< std_laspx_* std_laspx_,0,
+             0,std_laspy_ * std_laspy_;
   MatrixXd R_=R_laser_;
   
   MatrixXd S = H_ * P_ * Ht + R_;
